@@ -18,12 +18,20 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">顶上 <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">全屏</a>
-      <a class="nav-item nav-link" href="#">桌面</a>
-      <a class="nav-item nav-link" href="#">书签</a>
-    </div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" href="index.html">顶上</a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" href="#" onclick="openFullscreen()">全屏</a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" href="#" onclick="closeFullscreen()">桌面</a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" href="#">书签</a>
+      </li>
+    </ul>
   </div>
 
 </nav>
