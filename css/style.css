@@ -8,5 +8,10 @@ body {
     font-size: 1.5rem;
     background-color: #000;
     color: #dee2e6;
-    line-height: 1;
+    line-height: 1.5;
+}
+
+html { 
+overflow: scroll;
+overflow-x: hidden;
 }
