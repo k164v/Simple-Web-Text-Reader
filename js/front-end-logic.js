@@ -1,7 +1,3 @@
-var updateHTML = function(){
-	    document.getElementById("main_content") = 'asdasd';
-}
-
 var openFile = function(event) {
     var input = event.target;
 
