@@ -1,3 +1,12 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 999;
+}
+
 p {
     margin-top: 0;
     margin-bottom: 0rem;
@@ -19,3 +28,17 @@ overflow-x: hidden;
 ::-webkit-scrollbar { 
     display: none; 
 }
+
+.custom-file-label {
+background-color: #0000;
+}
+
+.custom-file-label::after {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.custom-file-label {
+    color: #ffffff;
+}
+

@@ -9,19 +9,47 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/front-end-logic.js"></script>
+  <div id="navbar">
+  <nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+  <a class="navbar-brand" href="#">NS简阅</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">顶上 <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">全屏</a>
+      <a class="nav-item nav-link" href="#">桌面</a>
+      <a class="nav-item nav-link" href="#">书签</a>
+    </div>
+  </div>
+
+</nav>
+  </div>
+
 </head>
 <body>
-  
-<input type='file' accept='text/plain' onchange='openFile(event)'>
-<img id='output'>
 
-<div class="container">
-  <div id ="main_content">
-  <p>
+
+<div id='selectFile'>
+
+
+<div id="main_content" style="margin-top: 5rem;text-align: center">
+  <img 
+    src="res/logo.svg" 
+    height="300px"
+    width="300px" style="
+    filter: invert(1);"/>
+<p>
   请选择你想要读的txt来开始阅读。
-</p> 
-
-  </div>
+</p>
+<div class="custom-file">
+  <input type="file" accept="text/plain" onchange="openFile(event)" class="custom-file-input" id="customFileLang" lang="zn">
+  <label class="custom-file-label" for="customFileLang"><div>选择文件</div></label>
+</div>
+</div>
 </div>
 
 </body>
