@@ -1,9 +1,4 @@
 var prevScrollpos = window.pageYOffset;
-
-$('.navbar-nav>li>a').on('click', function(){
-    $('.navbar-collapse').collapse('hide');
-});
-
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
@@ -24,18 +19,24 @@ var openFile = function(event) {
       var text = reader.result;
       text = text.split(/\n/);
       newText = ''
-      text.forEach(function(element) {
-		  newText=newText+"<p>"+element+"</p>";
+      text.forEach(function(element,index) {
+      newText=newText+"<div id='type_"+index+"'>"+element+"</div>";
+		  //newText=newText+"<p>"+element+"</p>";
 	  });
      document.getElementById("main_content").innerHTML=newText;
      document.getElementById("main_content").style.textAlign = "left";
     };
     text = reader.readAsText(input.files[0]);
+
+    document.addEventListener('long-press', function(e) {
+          alert(e.target.id); // the object's id
+    });
   };
 
 
   /* Get the documentElement (<html>) to display the page in fullscreen */
 var elem = document.documentElement;
+
 
 /* View in fullscreen */
 function openFullscreen() {
@@ -62,4 +63,31 @@ function closeFullscreen() {
     document.msExitFullscreen();
   }
 }
+
+  function startEasyLoad(){
+    $(function() {
+        $('.lazy').lazy({
+            // called before an elements gets handled
+            beforeLoad: function(element) {
+                console.log('is about to be loaded');
+            },
+            
+            // called after an element was successfully handled
+            afterLoad: function(element) {
+                console.log('was loaded successfully');
+            },
+            
+            // called whenever an element could not be handled
+            onError: function(element) {
+                console.log('could not be loaded');
+            },
+            
+            // called once all elements was handled
+            onFinishedAll: function() {
+                console.log('finished loading all images');
+            }
+        });
+    });
+
+  }
 
