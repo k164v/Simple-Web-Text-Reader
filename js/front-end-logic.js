@@ -1,4 +1,6 @@
 var prevScrollpos = window.pageYOffset;
+var currentIndex = 0;
+
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
@@ -29,7 +31,8 @@ var openFile = function(event) {
     text = reader.readAsText(input.files[0]);
 
     document.addEventListener('long-press', function(e) {
-          alert(e.target.id); // the object's id
+          document.getElementById("snackbar").style.display="block";
+          //alert(e.target.id); // the object's id
     });
   };
 
@@ -62,6 +65,10 @@ function closeFullscreen() {
   } else if (document.msExitFullscreen) { /* IE/Edge */
     document.msExitFullscreen();
   }
+}
+
+function closeFrontMenu(){
+    document.getElementById("snackbar").style.display="none";
 }
 
   function startEasyLoad(){
