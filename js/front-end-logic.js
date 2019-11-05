@@ -1,5 +1,6 @@
 var prevScrollpos = window.pageYOffset;
 var currentIndex = 0;
+var currentSelectedElement;
 
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
@@ -20,7 +21,7 @@ var openFile = function(event) {
     reader.onload = function(){
       var text = reader.result;
       text = text.split(/\n/);
-      newText = ''
+      newText = '';
       text.forEach(function(element,index) {
       newText=newText+"<div id='type_"+index+"'>"+element+"</div>";
 		  //newText=newText+"<p>"+element+"</p>";
@@ -29,10 +30,12 @@ var openFile = function(event) {
      document.getElementById("main_content").style.textAlign = "left";
     };
     text = reader.readAsText(input.files[0]);
-
     document.addEventListener('long-press', function(e) {
-          document.getElementById("snackbar").style.display="block";
-          //alert(e.target.id); // the object's id
+    document.getElementById("snackbar").style.display="block";
+    currentSelectedElement=e.target;
+    saveBookmark();
+    //console.log(e.target.id);
+    //alert(e.target.id); // the object's id
     });
   };
 
@@ -65,6 +68,14 @@ function closeFullscreen() {
   } else if (document.msExitFullscreen) { /* IE/Edge */
     document.msExitFullscreen();
   }
+}
+
+function saveBookmark(){
+  console.log("save bookmark "+currentSelectedElement.id);
+}
+
+function saveMarking(){
+  console.log("save marking "+currentSelectedElement.id);
 }
 
 function closeFrontMenu(){
